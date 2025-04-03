@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float tourque = 1f;
+    [SerializeField] float tourque = 10f;
     private Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     {
         // Get the input from the player
         float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        rb.AddTorque(moveHorizontal * tourque, ForceMode2D.Force);
+        rb.AddTorque(-moveHorizontal * tourque);
     }
 }
