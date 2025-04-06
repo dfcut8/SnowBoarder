@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CrashDetector : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class CrashDetector : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             Debug.Log("Player hit the ground!");
+            SceneManager.LoadScene(0);
         }
     }
 }

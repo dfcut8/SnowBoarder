@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class FinishLine : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Player has crossed the finish line!");
+            SceneManager.LoadScene(0);
         }
     }
 }
