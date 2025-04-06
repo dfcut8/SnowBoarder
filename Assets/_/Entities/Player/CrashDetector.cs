@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class CrashDetector : MonoBehaviour
 {
+    [SerializeField] private float delayAfterCrash = 1f;
     CircleCollider2D cc2d;
     void Start()
     {
@@ -13,7 +14,12 @@ public class CrashDetector : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             Debug.Log("Player hit the ground!");
-            SceneManager.LoadScene(0);
+            Invoke("reloadScene", delayAfterCrash);
         }
+    }
+
+    private void reloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
