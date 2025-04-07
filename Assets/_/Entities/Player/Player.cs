@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] float baseSpeed = 10f;
     private Rigidbody2D rb;
     private SurfaceEffector2D surfaceEffector2D;
+    private bool isControlsEnabled = true;
 
     void Start()
     {
@@ -16,10 +17,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // Get the input from the player
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        rb.AddTorque(-moveHorizontal * tourque);
-        responseToBoost();
+        if (isControlsEnabled)
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            rb.AddTorque(-moveHorizontal * tourque);
+            responseToBoost();
+        }
+    }
+
+    public void DisableControls()
+    {
+        isControlsEnabled = false;
     }
 
     private void responseToBoost()

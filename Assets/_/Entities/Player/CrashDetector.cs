@@ -19,6 +19,8 @@ public class CrashDetector : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             Debug.Log("Player hit the ground!");
+            var player = FindAnyObjectByType<Player>();
+            player.DisableControls();
             hitEffect.Play();
             audioSource.PlayOneShot(crashSFX);
             Invoke("reloadScene", delayAfterCrash);
