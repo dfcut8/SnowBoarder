@@ -97,6 +97,7 @@
 *.USDZ filter=lfs diff=lfs merge=lfs -text
 *.VDB filter=lfs diff=lfs merge=lfs -text
 *.WAV filter=lfs diff=lfs merge=lfs -text
+*.OGG filter=lfs diff=lfs merge=lfs -text
 *.XLS filter=lfs diff=lfs merge=lfs -text
 *.XLSX filter=lfs diff=lfs merge=lfs -text
 *.ZIP filter=lfs diff=lfs merge=lfs -text
