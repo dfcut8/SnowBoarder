@@ -22,7 +22,7 @@ public class DustTrail : MonoBehaviour
         }
     }
 
-    void OllisionExit2D(Collision2D collision)
+    void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
